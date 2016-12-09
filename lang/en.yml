@@ -1,0 +1,12 @@
+en:
+  JobStatus:
+    Options:
+      Queued: 'Queued'
+      Running: 'Running'
+      Complete: 'Complete'
+      Failed: 'Failed'
+      Paused: 'Paused'
+      Cancelled: 'Cancelled'
+      Held: 'Held'
+    Label: 'Status'
+    Guide: 'Current status, depending on which other options may or may not be available'

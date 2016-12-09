@@ -1,0 +1,6 @@
+---
+Name: quaff-site-config
+---
+Injector:
+  File:
+    class: Quaff\Site\Models\LocalFile

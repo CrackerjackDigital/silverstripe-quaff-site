@@ -1,0 +1,48 @@
+---
+Name: quaff-site-fields
+---
+Quaff\Site\Models\Job:
+  extensions:
+    - Modular\Fields\Title
+    - Modular\Fields\EventDate
+    - Quaff\Site\Fields\JobStatus
+    - Quaff\Site\Relationships\HasWebSite
+    - Quaff\Fields\EndpointSelector
+Quaff\Site\Models\WebSite:
+  extensions:
+    - Modular\Fields\Title
+    - Modular\Fields\Content
+    - Modular\Fields\EventDate
+    - Modular\Fields\ExternalLink
+Quaff\Site\Models\WebSite:
+  extensions:
+    - Modular\Fields\Title
+    - Modular\Fields\Content
+---
+Name: quaff-site-relationships
+---
+Quaff\Site\Models\Job:
+  extensions:
+    - Quaff\Site\Permissions\Importable
+Quaff\Site\Models\WebPage:
+  extensions:
+    - Modular\Relationships\HasFiles          # local downloaded files once downloaded
+    - Quaff\Site\Relationship\HasResources  # external links to local or remote files/resources, with type
+Quaff\Site\Models\WebSite:
+  extensions:
+    - Quaff\Site\Relationships\HasWebPages
+---
+Name: quaff-site-back-relationships
+---
+LocalFile:
+  belongs_many_many:
+    WebPages: Quaff\Site\Models\WebPage
+Modular\Models\ExternalLink:
+  belongs_many_many:
+    WebPages: Quaff\Site\Models\WebPage
+Quaff\Site\Models\WebPage:
+  belongs_many_many:
+    WebSites: Quaff\Site\Models\WebSite
+Quaff\Site\Models\WebResource:
+  belongs_many_many:
+    WebPages: Quaff\Site\Models\WebPage

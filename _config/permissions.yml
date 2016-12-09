@@ -1,0 +1,6 @@
+---
+Name: quaff-site-permissions
+---
+Quaff\Site\Models\WebSite:
+  extensions:
+    - Quaff\Site\Permissions\Importable
